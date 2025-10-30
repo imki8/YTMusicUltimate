@@ -99,7 +99,11 @@ jobs:
         id: build_package
         run: |
           cd ${{ github.workspace }}/main
-          make clean package SIDELOADING=1
+          make clean
+          make package SIDELOADING=1 ADDITIONAL_CFLAGS="-Wno-error -Wno-vla-cxx-extension"
+        env:
+          THEOS: ${{ github.workspace }}/theos
+
         env:
           THEOS: ${{ github.workspace }}/theos
 
