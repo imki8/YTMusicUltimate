@@ -104,9 +104,6 @@ jobs:
         env:
           THEOS: ${{ github.workspace }}/theos
 
-        env:
-          THEOS: ${{ github.workspace }}/theos
-
       - name: Inject tweak into provided IPA
         run: |
           cd ${{ github.workspace }}/main/packages
